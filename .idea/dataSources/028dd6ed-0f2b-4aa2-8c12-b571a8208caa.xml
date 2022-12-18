@@ -1313,92 +1313,204 @@
     <argument id="481" parent="165">
       <Position>1</Position>
     </argument>
-    <table id="482" parent="166" name="Pessoas"/>
-    <table id="483" parent="166" name="SequelizeMeta"/>
-    <table id="484" parent="166" name="sqlite_master">
+    <table id="482" parent="166" name="Matriculas"/>
+    <table id="483" parent="166" name="Niveis"/>
+    <table id="484" parent="166" name="Pessoas"/>
+    <table id="485" parent="166" name="SequelizeMeta"/>
+    <table id="486" parent="166" name="Turmas"/>
+    <table id="487" parent="166" name="sqlite_master">
       <System>1</System>
     </table>
-    <table id="485" parent="166" name="sqlite_sequence">
+    <table id="488" parent="166" name="sqlite_sequence">
       <System>1</System>
     </table>
-    <column id="486" parent="482" name="id">
+    <column id="489" parent="482" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>INTEGER|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="487" parent="482" name="nome">
+    <column id="490" parent="482" name="status">
       <DasType>VARCHAR(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="488" parent="482" name="ativo">
-      <DasType>TINYINT(1)|0s</DasType>
+    <column id="491" parent="482" name="estudante_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="489" parent="482" name="email">
-      <DasType>VARCHAR(255)|0s</DasType>
+    <column id="492" parent="482" name="turma_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="490" parent="482" name="role">
-      <DasType>VARCHAR(255)|0s</DasType>
+    <column id="493" parent="482" name="createdAt">
+      <DasType>DATETIME|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="491" parent="482" name="createdAt">
+    <column id="494" parent="482" name="updatedAt">
       <DasType>DATETIME|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="492" parent="482" name="updatedAt">
+    <foreign-key id="495" parent="482">
+      <ColNames>estudante_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>Pessoas</RefTableName>
+    </foreign-key>
+    <foreign-key id="496" parent="482">
+      <ColNames>turma_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>Turmas</RefTableName>
+    </foreign-key>
+    <key id="497" parent="482">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="498" parent="483" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="499" parent="483" name="descr_nivel">
+      <DasType>VARCHAR(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="500" parent="483" name="createdAt">
+      <DasType>DATETIME|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="501" parent="483" name="updatedAt">
+      <DasType>DATETIME|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <key id="502" parent="483">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="503" parent="484" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="504" parent="484" name="nome">
+      <DasType>VARCHAR(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="505" parent="484" name="ativo">
+      <DasType>TINYINT(1)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="506" parent="484" name="email">
+      <DasType>VARCHAR(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="507" parent="484" name="role">
+      <DasType>VARCHAR(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="508" parent="484" name="createdAt">
+      <DasType>DATETIME|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="509" parent="484" name="updatedAt">
       <DasType>DATETIME|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <key id="493" parent="482">
+    <key id="510" parent="484">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="494" parent="483" name="name">
+    <column id="511" parent="485" name="name">
       <DasType>VARCHAR(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <index id="495" parent="483" name="sqlite_autoindex_SequelizeMeta_1">
+    <index id="512" parent="485" name="sqlite_autoindex_SequelizeMeta_1">
       <ColNames>name</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="496" parent="483">
+    <key id="513" parent="485">
       <ColNames>name</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_SequelizeMeta_1</UnderlyingIndexName>
     </key>
-    <key id="497" parent="483">
+    <key id="514" parent="485">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_SequelizeMeta_1</UnderlyingIndexName>
     </key>
-    <column id="498" parent="484" name="type">
+    <column id="515" parent="486" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="516" parent="486" name="data_inicio">
+      <DasType>DATE|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="517" parent="486" name="docente_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="518" parent="486" name="nivel_id">
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="519" parent="486" name="createdAt">
+      <DasType>DATETIME|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="520" parent="486" name="updatedAt">
+      <DasType>DATETIME|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <foreign-key id="521" parent="486">
+      <ColNames>docente_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>Pessoas</RefTableName>
+    </foreign-key>
+    <foreign-key id="522" parent="486">
+      <ColNames>nivel_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>Niveis</RefTableName>
+    </foreign-key>
+    <key id="523" parent="486">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="524" parent="487" name="type">
       <DasType>TEXT|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="499" parent="484" name="name">
+    <column id="525" parent="487" name="name">
       <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="500" parent="484" name="tbl_name">
+    <column id="526" parent="487" name="tbl_name">
       <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="501" parent="484" name="rootpage">
+    <column id="527" parent="487" name="rootpage">
       <DasType>INT|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="502" parent="484" name="sql">
+    <column id="528" parent="487" name="sql">
       <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="503" parent="485" name="name">
+    <column id="529" parent="488" name="name">
       <Position>1</Position>
     </column>
-    <column id="504" parent="485" name="seq">
+    <column id="530" parent="488" name="seq">
       <Position>2</Position>
     </column>
   </database-model>

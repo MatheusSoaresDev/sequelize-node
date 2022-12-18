@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     descr_nivel: DataTypes.STRING
   }, {});
   Niveis.associate = function(models) {
-    // associations can be defined here
+    Niveis.hasMany(models.Turmas)
   };
   return Niveis;
 };
