@@ -1,7 +1,9 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Turmas = sequelize.define('Turmas', {
-    data_inicio: DataTypes.DATEONLY
+    data_inicio: DataTypes.DATEONLY,
+    turma_id: DataTypes.STRING
+
   }, {});
   Turmas.associate = function(models) {
     Turmas.hasMany(models.Matriculas, {
